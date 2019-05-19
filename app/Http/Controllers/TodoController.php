@@ -74,19 +74,32 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todo::find($id);
+        return view('todo.edit')->with('todo',$todo);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'text'=>'required|max:191',
+            'body'=>'required',
+            'due'=>'required'
+        ]);
+        $todo =  Todo::find($id);
+        $todo->text = $request->input('text');
+        $todo->body = $request->input('body');
+        $todo->due = $request->input('due');
+        $todo->save();
+        return redirect('/todo/'.$todo->id)->with('success','Todo Updated');
+
     }
 
     /**

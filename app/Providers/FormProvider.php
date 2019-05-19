@@ -26,5 +26,6 @@ class FormProvider extends ServiceProvider
         \Form::component('bsText','components.forms.text',['name','value'=> null,'attributes'=>[]]);
         \Form::component('bsTextArea','components.forms.textArea',['name','value'=> null,'attributes'=>[]]);
         \Form::component('bsSubmit','components.forms.submit',['value'=> 'Submit','attributes'=>[]]);
+        \Form::component('hidden','components.forms.hidden',['name','value'=> null,'attributes'=>[]]);
     }
 }

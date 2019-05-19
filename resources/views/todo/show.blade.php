@@ -6,6 +6,8 @@
                 <p>{{$todo->body}}</p>
 
             </div>
+    <br>
+    <a href="/todo/{{$todo->id}}/edit" class="btn btn-info">Edit</a>
     <a href="{{URL::to('/')}}" class="btn btn-info">Go Back</a>
 
 
