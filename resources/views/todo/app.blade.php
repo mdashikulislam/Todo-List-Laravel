@@ -25,6 +25,7 @@
     <style>
         .well span{
             font-size: 16px;
+            margin-left: 20px;
         }
     </style>
     <script src="{{asset('bootstrap/jquery-3.4.1.min.js')}}"></script>

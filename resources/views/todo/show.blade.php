@@ -9,6 +9,10 @@
     <br>
     <a href="/todo/{{$todo->id}}/edit" class="btn btn-info">Edit</a>
     <a href="{{URL::to('/')}}" class="btn btn-info">Go Back</a>
+    {!! Form::open(['action' => ['TodoController@destroy',$todo->id],'method'=>'POST','class'=>'pull-right']) !!}
+    {{Form::hidden('_method','DELETE')}}
+    {{Form::bsSubmit('Delete',['class'=>'btn btn-info'])}}
+    {!! Form::close() !!}
 
 
 @endsection
