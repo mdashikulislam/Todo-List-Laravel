@@ -10,9 +10,11 @@
     <link rel="stylesheet" href="{{asset('bootstrap/bootstrap-theme.css')}}">
 </head>
 <body>
+    @include('inc.nav')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                @include('inc.message')
                 @yield('content')
             </div>
         </div>
